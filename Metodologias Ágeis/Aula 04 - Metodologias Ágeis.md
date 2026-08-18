@@ -519,7 +519,87 @@ Disciplina: Metodologias Ágeis
 
 ---
 
-## Slide 38 — Fechamento e próxima aula
+## Slide 38 — Glossário rápido: Scrum e responsabilidades
+
+| Termo | Significado |
+|---|---|
+| **Scrum** | Framework leve para gerar valor por meio de soluções adaptativas para problemas complexos |
+| **Scrum Team** | Time responsável pelo produto, formado por Product Owner, Scrum Master e Developers |
+| **PO — Product Owner** | Responsável por maximizar o valor do produto e pela gestão eficaz do Product Backlog |
+| **Scrum Master** | Responsável por estabelecer o Scrum e apoiar a efetividade do Scrum Team |
+| **Developers** | Pessoas que planejam e realizam o trabalho necessário para criar um Increment utilizável |
+| **Stakeholder** | Pessoa ou grupo interessado, afetado ou capaz de influenciar o produto |
+| **B1-T2** | Segundo trabalho do primeiro bimestre: modelagem e priorização de backlog |
+| **Framework** | Estrutura mínima de elementos e regras que orienta o trabalho sem prescrever todo o processo |
+
+---
+
+## Slide 39 — Glossário rápido: planejamento e artefatos
+
+| Termo | Significado |
+|---|---|
+| **Product Goal** | Objetivo de longo prazo que descreve um estado futuro desejado para o produto |
+| **Product Backlog** | Lista emergente e ordenada do que é necessário para melhorar o produto |
+| **Sprint** | Ciclo de duração fixa, de até um mês, no qual valor é criado por meio de um Increment |
+| **Sprint Goal** | Objetivo único que explica por que a Sprint é valiosa |
+| **Sprint Planning** | Evento em que o Scrum Team define o objetivo, seleciona itens e cria o plano inicial da Sprint |
+| **Sprint Backlog** | Sprint Goal, itens selecionados e plano dos Developers para entregar o Increment |
+| **Increment** | Resultado utilizável que amplia o produto e atende à Definition of Done |
+| **Release** | Disponibilização de uma versão utilizável do produto para usuários ou ambiente-alvo |
+
+---
+
+## Slide 40 — Glossário rápido: gestão do backlog
+
+| Termo | Significado |
+|---|---|
+| **Refinamento** | Atividade contínua de dividir e detalhar itens do Product Backlog |
+| **DoR — Definition of Ready** | Acordo opcional sobre condições para considerar um item suficientemente preparado |
+| **DoD — Definition of Done** | Descrição formal das condições de qualidade exigidas para o Increment |
+| **História de usuário** | Descrição breve de uma necessidade sob a perspectiva de quem receberá o valor |
+| **Critério de aceitação** | Condição verificável usada para alinhar e validar o comportamento esperado de uma história |
+| **Capacidade** | Quantidade de trabalho que o time avalia conseguir realizar considerando sua disponibilidade |
+| **Dependência** | Relação em que um item precisa de outro resultado, decisão ou recurso para avançar |
+| **Risco** | Incerteza que pode afetar valor, prazo, qualidade ou viabilidade do produto |
+| **Valor** | Benefício esperado para usuários, negócio, estratégia ou qualidade técnica |
+
+---
+
+## Slide 41 — Referências bibliográficas
+
+### Bibliografia prevista no plano de ensino
+
+- SCHWABER, Ken. *Agile Project Management with Scrum*. 1. ed. Microsoft Press, 2004.
+- PRESSMAN, Roger S. *Engenharia de Software*. 6. ed. Porto Alegre: AMGH, 2010.
+- DINSMORE, Paul C.; BREWIN, Jeannette C. *AMA — Manual de Gerenciamento de Projetos*. Brasport, 2009.
+- VARGAS, Ricardo. *Manual Prático do Plano de Projeto: Utilizando o PMBOK Guide*. 3. ed. Brasport, 2007.
+
+### Relação com a aula
+
+- Planejamento adaptativo e gestão de projetos
+- Scrum aplicado ao desenvolvimento de produtos
+- Organização, qualidade e evolução do trabalho de software
+
+---
+
+## Slide 42 — Referências e leituras complementares
+
+### Fontes oficiais e materiais específicos
+
+- SCHWABER, Ken; SUTHERLAND, Jeff. *O Guia do Scrum — O Guia Definitivo para o Scrum: As Regras do Jogo*. Novembro de 2020. Disponível em: https://scrumguides.org/download.html
+- BECK, Kent et al. *Manifesto para Desenvolvimento Ágil de Software*. 2001. Disponível em: https://agilemanifesto.org/iso/ptbr/manifesto.html
+- SCRUM ALLIANCE. *Recursos Scrum*. Disponível em: https://resources.scrumalliance.org/
+- COHN, Mike. *User Stories Applied: For Agile Software Development*. Addison-Wesley, 2004.
+
+### Tópicos para aprofundamento
+
+- Sprint Goal, Sprint Planning e Product Backlog
+- Refinamento, histórias de usuário e critérios de aceitação
+- Definition of Done e entrega incremental de valor
+
+---
+
+## Slide 43 — Fechamento e próxima aula
 
 - Hoje:
   - Planejamento em diferentes horizontes
