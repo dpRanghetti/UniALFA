@@ -1,4 +1,4 @@
-# Aula 04 — Containers e Orquestração: Docker e Kubernetes
+# Aula 04 — Continuação da Prática e Desenvolvimento do T2
 
 **Cloud Computing e DevOps Avançado**  
 CST em Sistemas para Internet | 6º Período
@@ -7,919 +7,376 @@ CST em Sistemas para Internet | 6º Período
 
 ## Slide 1: Abertura
 
-### Aula 04 — Containers e Orquestração
+### Aula 04 — Continuação da Aula 03
 
 - **Professor:** Ranghetti
-- **Tema:** Docker (conceitos) e Kubernetes (visão geral)
-- **Atividade:** containerização de uma aplicação simples
-- **Trabalho:** entrega e feedback do Trabalho 2 (T2)
+- **Retomada:** Prática — Socialização
+- **Atividade principal:** desenvolvimento orientado do Trabalho 2 (T2)
+- **Conteúdo de containers e Kubernetes:** transferido para a Aula 05
 
 ---
 
-## Slide 2: Objetivos da Aula
+## Slide 2: Por que Ajustamos a Aula?
 
-### Ao final desta aula você será capaz de
+### Continuidade do percurso de aprendizagem
 
-- Explicar a diferença entre **máquinas virtuais e containers**
-- Diferenciar **imagem, container, Dockerfile e registro**
-- Construir e executar uma imagem de aplicação com Docker
-- Aplicar práticas básicas de segurança e eficiência em imagens
-- Explicar por que aplicações com muitos containers precisam de orquestração
-- Relacionar **Pods, Deployments e Services** no Kubernetes
-- Identificar requisitos adicionais para executar containers em produção
-
----
-
-## Slide 3: Agenda
-
-- Revisão da Aula 03
-- Entrega e feedback do **Trabalho 2 (T2)**
-- Fundamentos de containers
-- Imagens, Dockerfile e registros
-- Redes, volumes e configuração
-- Prática de containerização
-- Visão geral do Kubernetes
-- Pods, Deployments e Services
-- Requisitos para produção
+- A Aula 03 foi concluída antes da etapa de socialização
+- Os grupos ainda precisam apresentar e discutir suas propostas
+- O T2 exige decisões arquiteturais que se beneficiam de feedback em sala
+- A Aula 04 será usada para:
+  - Concluir a prática da Aula 03
+  - Desenvolver e revisar o T2
+  - Tirar dúvidas com acompanhamento do professor
 
 ---
 
-## Slide 4: Revisão da Aula 03
+## Slide 3: Agenda Atualizada
 
-### Da arquitetura à implantação
-
-- Microserviços permitem **implantação e escala independentes**
-- Sistemas distribuídos convivem com latência e falhas parciais
-- Serviços precisam de limites e contratos claros
-- Aplicações stateless facilitam escala horizontal
-- Automação e observabilidade são requisitos operacionais
-
-### Pergunta de conexão
-
-Como empacotar cada serviço para executá-lo de forma consistente em diferentes ambientes?
+- Retomada rápida do cenário da Aula 03
+- Socialização das arquiteturas propostas
+- Discussão e feedback coletivo
+- Reapresentação do objetivo e dos critérios do T2
+- Desenvolvimento do trabalho em etapas
+- Revisão cruzada entre grupos
+- Checkpoint com o professor
+- Fechamento e preparação para a Aula 05
 
 ---
 
-## Slide 5: Trabalho 2 (T2) — Entrega
+## Slide 4: Onde Paramos na Aula 03?
+
+### Decomposição de um monólito de e-commerce
+
+Os grupos trabalharam em uma arquitetura com:
+
+- Capacidades de negócio e limites de serviços
+- Dados sob responsabilidade de cada serviço
+- Comunicação síncrona ou assíncrona
+- Dependências e integrações externas
+- Estratégia de escala para períodos de promoção
+- Tratamento inicial de falhas parciais
+
+---
+
+## Slide 5: Retomada do Cenário
+
+### E-commerce regional
+
+- Cadastro e autenticação de clientes
+- Catálogo e busca de produtos
+- Carrinho de compras
+- Pedidos e controle de estoque
+- Pagamento por gateway externo
+- Frete e acompanhamento de entrega
+- Envio de e-mail e mensagens
+
+**Problema central:** promoções geram picos no catálogo e tornam a aplicação instável.
+
+---
+
+## Slide 6: Prática — Socialização
+
+### Apresentação rápida dos grupos
+
+Cada grupo terá até **10 minutos** para explicar:
+
+- Limites escolhidos para os serviços
+- Decisão de comunicação síncrona ou assíncrona
+- Estratégia de escala para o período de promoção
+- Principal trade-off da proposta
+
+### Critério da discussão
+
+Não buscamos uma única resposta correta, mas decisões coerentes e justificadas.
+
+---
+
+## Slide 7: Socialização — Roteiro de Escuta
+
+### Enquanto outro grupo apresenta
+
+Registre:
+
+- Uma decisão arquitetural que ficou clara
+- Um risco que deveria ser mais discutido
+- Uma dependência que pode gerar acoplamento
+- Uma alternativa diferente da proposta do seu grupo
+- Uma pergunta para os autores da arquitetura
+
+**Objetivo:** comparar decisões, não escolher um “vencedor”.
+
+---
+
+## Slide 8: Socialização — Feedback Coletivo
+
+### Perguntas para cada proposta
+
+- Os limites dos serviços correspondem a capacidades de negócio?
+- O Catálogo pode escalar sem escalar todo o sistema?
+- O que ocorre se Notificações ficar indisponível?
+- Algum serviço acessa diretamente o banco de outro?
+- Há dependência síncrona no caminho crítico da compra?
+- O principal trade-off foi reconhecido pelo grupo?
+
+---
+
+## Slide 9: Trabalho 2 (T2) — Desenvolvimento em Sala
 
 ### Arquitetura de Referência: Microserviços e Containers
 
-- Entrega do diagrama e da descrição da arquitetura
-- A proposta deve apresentar:
-  - Serviços e responsabilidades
-  - APIs, mensagens ou eventos
-  - Estratégia de dados
-  - Escalabilidade e tratamento de falhas
-  - Estratégia prevista de deploy com containers
+**Objetivo:** desenvolver uma proposta de arquitetura em nuvem distribuída e escalável para um cenário de negócio.
 
-**Valor:** até 1,0 ponto de acordo com entrega e participação.
+- **Valor:** até 1,0 ponto de acordo com entrega e participação
+- **Modalidade:** trabalho em grupo
+- **Situação nesta aula:** desenvolvimento orientado
+- **Entrega:** não será realizada nesta aula; o prazo será definido ou confirmado pelo professor
 
 ---
 
-## Slide 6: T2 — Feedback Orientado
+## Slide 10: T2 — Entregável Esperado
 
-### Critérios para a análise
+### O documento deve conter
 
-- Os limites dos serviços correspondem a capacidades de negócio?
-- O diagrama torna dependências e integrações visíveis?
-- Componentes críticos podem escalar separadamente?
-- A arquitetura considera falhas parciais?
-- A estratégia de dados evita acoplamento indevido?
-- O uso de containers tem uma justificativa clara?
+- Descrição resumida do cenário e dos requisitos
+- Diagrama de arquitetura, preferencialmente no modelo C4 ou equivalente
+- Descrição das responsabilidades de cada serviço
+- Comunicação entre componentes: APIs, mensagens ou eventos
+- Estratégia de dados por serviço
+- Estratégia de escalabilidade e tratamento de falhas
+- Estratégia de deploy, incluindo o uso previsto de containers
 
-> O objetivo do feedback é melhorar as decisões, não apenas verificar componentes.
-
----
-
-## Slide 7: O Problema do “Na Minha Máquina Funciona”
-
-### Ambientes inconsistentes geram falhas
-
-- Versões diferentes de runtime e bibliotecas
-- Dependências instaladas manualmente
-- Configurações não documentadas
-- Sistemas operacionais com comportamentos distintos
-- Ausência de uma forma reproduzível de inicialização
-
-### Resultado
-
-Uma aplicação funciona no desenvolvimento, mas falha em teste ou produção.
+**Não é necessário implementar a solução nesta etapa.**
 
 ---
 
-## Slide 8: O que é um Container?
+## Slide 11: T2 — Critérios de Avaliação
 
-### Processo isolado com aplicação e dependências
-
-Um container empacota:
-
-- Código da aplicação
-- Runtime e bibliotecas
-- Dependências do sistema
-- Configuração necessária para iniciar o processo
-
-Containers compartilham o **kernel do host**, mas executam com isolamento de processos, rede e sistema de arquivos.
-
----
-
-## Slide 9: Containers Não São Máquinas Virtuais
-
-| Aspecto | Máquina Virtual | Container |
-|---|---|---|
-| Unidade | Sistema operacional completo | Processo isolado |
-| Kernel | Próprio para cada VM | Compartilhado com o host |
-| Inicialização | Geralmente mais lenta | Geralmente mais rápida |
-| Tamanho | Frequentemente em GB | Frequentemente em MB |
-| Isolamento | Forte, via hipervisor | Via recursos do sistema operacional |
-| Densidade | Menor | Maior |
-
-**Não existe substituição universal:** VMs e containers podem ser usados em conjunto.
+| Critério | Peso |
+|---|---:|
+| Clareza e legibilidade do diagrama |
+| Coerência dos limites e responsabilidades |
+| Escalabilidade e resiliência da solução |
+| Comunicação e estratégia de dados |
+| Justificativas e estratégia de deploy |
+| Participação das equipes |
+| **Total** | **1,00** |
 
 ---
 
-## Slide 10: Containers no Linux
+## Slide 12: Organização da Oficina
 
-### Mecanismos principais
+### Papéis sugeridos no grupo
 
-- **Namespaces:** isolam processos, rede, usuários e pontos de montagem
-- **Control groups (cgroups):** controlam e contabilizam CPU, memória e outros recursos
-- **Sistema de arquivos em camadas:** reutiliza conteúdo entre imagens
-- **Capabilities:** permitem reduzir privilégios do processo
+- **Facilitador:** organiza tempo e decisões
+- **Arquiteto/diagramador:** atualiza o diagrama
+- **Relator:** registra justificativas e riscos
+- **Revisor:** confronta a proposta com os critérios
+- **Porta-voz:** apresenta dúvidas e decisões nos checkpoints
 
-### Papel do runtime
-
-Cria e executa containers a partir das especificações e imagens.
-
----
-
-## Slide 11: Benefícios dos Containers
-
-- Ambiente de execução reproduzível
-- Empacotamento padronizado
-- Inicialização rápida
-- Maior densidade por host
-- Facilidade de automação em CI/CD
-- Implantação consistente entre ambientes
-- Escala horizontal por replicação
-- Isolamento de dependências entre aplicações
-
-> Portabilidade reduz diferenças de ambiente, mas não elimina dependências de arquitetura, kernel ou serviços externos.
+Os papéis organizam a atividade, mas as decisões pertencem ao grupo.
 
 ---
 
-## Slide 12: Limitações e Cuidados
-
-- Compartilhamento do kernel exige atenção à segurança
-- Dados gravados na camada do container são efêmeros
-- Logs e métricas precisam sair do container
-- Redes distribuídas aumentam a complexidade
-- Imagens vulneráveis propagam risco
-- Muitos containers exigem automação operacional
-- Aplicações com estado demandam estratégia de persistência
-
----
-
-## Slide 13: Docker — Visão Geral
-
-### Plataforma para construir, distribuir e executar containers
-
-Componentes conceituais:
-
-- **Dockerfile:** instruções para construir uma imagem
-- **Image:** pacote imutável e versionado
-- **Container:** instância em execução de uma imagem
-- **Registry:** serviço de armazenamento e distribuição de imagens
-- **Docker Engine:** constrói e executa containers
-- **Docker CLI:** interface para enviar comandos ao Engine
-
----
-
-## Slide 14: Imagem vs. Container
-
-### Uma analogia útil
-
-- **Imagem:** modelo somente leitura para criar ambientes de execução
-- **Container:** instância criada a partir desse modelo
-
-```text
-Dockerfile → build → Imagem v1 → run → Container A
-                              └→ run → Container B
-```
-
-- A mesma imagem pode iniciar vários containers
-- Alterações internas de um container não modificam a imagem original
-
----
-
-## Slide 15: Imagens em Camadas
-
-### Reutilização e cache
-
-```text
-Camada 4 → código da aplicação
-Camada 3 → dependências
-Camada 2 → runtime
-Camada 1 → imagem-base
-```
-
-- Cada instrução relevante pode criar uma camada
-- Camadas idênticas podem ser compartilhadas
-- A ordem do Dockerfile afeta o uso do cache
-- Mudanças em uma camada invalidam o cache das seguintes
-
----
-
-## Slide 16: Dockerfile
-
-### Receita declarativa da imagem
-
-```dockerfile
-FROM node:22-alpine
-WORKDIR /app
-COPY package*.json ./
-RUN npm ci --omit=dev
-COPY . .
-ENV PORT=3000
-EXPOSE 3000
-CMD ["node", "server.js"]
-```
-
-- `FROM`: define a imagem-base
-- `WORKDIR`: configura o diretório de trabalho
-- `COPY` e `RUN`: adicionam arquivos e executam etapas de build
-- `CMD`: define o processo padrão do container
-
----
-
-## Slide 17: Contexto de Build e .dockerignore
-
-### Enviar somente o necessário
-
-O contexto de build contém os arquivos acessíveis ao Dockerfile.
-
-Exemplo de `.dockerignore`:
-
-```text
-node_modules
-.git
-.env
-coverage
-npm-debug.log
-```
-
-### Benefícios
-
-- Build mais rápido
-- Imagem menor
-- Menor risco de copiar segredos ou arquivos locais
-
----
-
-## Slide 18: Construir e Identificar uma Imagem
-
-```bash
-docker build -t agenda-api:1.0 .
-docker image ls
-```
-
-### Nome de imagem
-
-```text
-registro/namespace/repositorio:tag
-```
-
-Exemplo:
-
-```text
-registry.example.com/equipe/agenda-api:1.0
-```
-
-- A tag identifica uma referência para a versão
-- Em produção, prefira versões explícitas em vez de depender apenas de `latest`
-
----
-
-## Slide 19: Executar um Container
-
-```bash
-docker run --name agenda-api \
-  -p 8080:3000 \
-  -e NODE_ENV=production \
-  agenda-api:1.0
-```
-
-- `--name`: nome local do container
-- `-p 8080:3000`: porta do host → porta do container
-- `-e`: variável de ambiente
-- A aplicação fica acessível pela porta `8080` do host
-
----
-
-## Slide 20: Ciclo de Vida Básico
-
-```bash
-docker ps
-docker logs agenda-api
-docker stop agenda-api
-docker start agenda-api
-docker rm agenda-api
-```
-
-### Ideia central
-
-- Container deve ser substituível
-- Diagnóstico não deve depender de alterações manuais internas
-- Correções devem gerar uma nova imagem versionada
-
----
-
-## Slide 21: Configuração Externa
-
-### A mesma imagem em vários ambientes
-
-- Não incluir URLs, senhas ou tokens no código da imagem
-- Usar variáveis de ambiente ou mecanismos de configuração
-- Separar **configuração não sensível** de **segredos**
-- Rotacionar credenciais sem reconstruir a aplicação quando possível
-
-```text
-Imagem única + configuração de desenvolvimento
-             + configuração de homologação
-             + configuração de produção
-```
-
----
-
-## Slide 22: Persistência e Volumes
-
-### Containers são descartáveis; dados importantes não
-
-- A camada gravável do container pode desaparecer com sua remoção
-- **Volumes** armazenam dados fora do ciclo de vida do container
-- **Bind mounts** ligam um caminho do host ao container
-- Bancos de dados exigem persistência, backup e recuperação planejados
-
-```bash
-docker run -v dados-db:/var/lib/postgresql/data postgres:17
-```
-
----
-
-## Slide 23: Rede entre Containers
-
-### Comunicação por nomes, não por endereços fixos
-
-- Containers podem participar de uma rede virtual
-- Portas publicadas expõem serviços ao host
-- Serviços internos não precisam ser publicados externamente
-- Endereços de containers podem mudar
-- Descoberta por nome reduz dependência de IPs
-
-```text
-Front-end → API → Banco
-          rede interna
-```
-
----
-
-## Slide 24: Registro de Imagens
-
-### Distribuição entre ambientes
-
-Fluxo típico:
-
-```text
-Código → Build → Testes → Tag → Push no Registry → Deploy
-```
-
-Exemplos:
-
-- Docker Hub
-- GitHub Container Registry
-- Amazon Elastic Container Registry
-- Azure Container Registry
-- Google Artifact Registry
-
-O registro deve possuir controle de acesso, versionamento e análise de vulnerabilidades.
-
----
-
-## Slide 25: Boas Práticas de Imagem
-
-- Usar imagens-base confiáveis e mantidas
-- Fixar versões de dependências quando necessário
-- Manter imagens pequenas, sem ferramentas desnecessárias
-- Executar a aplicação como usuário não privilegiado
-- Não copiar segredos para a imagem
-- Usar build em múltiplos estágios quando aplicável
-- Atualizar e reconstruir imagens para corrigir vulnerabilidades
-- Registrar a origem dos componentes utilizados
-
----
-
-## Slide 26: Multi-stage Build
-
-### Separar compilação e execução
-
-```dockerfile
-FROM node:22-alpine AS build
-WORKDIR /app
-COPY package*.json ./
-RUN npm ci
-COPY . .
-RUN npm run build
-
-FROM nginx:alpine
-COPY --from=build /app/dist /usr/share/nginx/html
-```
-
-### Benefício
-
-A imagem final contém o resultado necessário para execução, sem todo o ambiente de build.
-
----
-
-## Slide 27: Containers e Microserviços
-
-### Relação comum, mas não obrigatória
-
-- Um serviço pode ser empacotado como uma imagem independente
-- Réplicas usam a mesma versão da imagem
-- Cada serviço pode possuir ciclo de deploy próprio
-- Limites de CPU e memória ajudam no isolamento
-- A imagem facilita a automação de testes e publicação
-
-**Atenção:** usar containers não transforma automaticamente um sistema em microserviços.
-
----
-
-## Slide 28: Prática — Aplicação Simples
-
-### Objetivo
-
-Containerizar uma API ou aplicação web fornecida pelo professor.
-
-Estrutura esperada:
-
-```text
-aplicacao/
-├── Dockerfile
-├── .dockerignore
-├── package.json
-└── server.js
-```
-
-A aplicação deve expor um endpoint de saúde e uma funcionalidade simples.
-
----
-
-## Slide 29: Prática — Etapa 1
-
-### Compreender a aplicação
-
-Antes de criar a imagem, identifique:
-
-1. Qual comando inicia a aplicação?
-2. Qual runtime e versão são necessários?
-3. Qual porta é utilizada?
-4. Quais dependências precisam ser instaladas?
-5. Quais configurações variam por ambiente?
-6. A aplicação grava dados localmente?
-
-**Tempo sugerido:** 10 minutos.
-
----
-
-## Slide 30: Prática — Etapa 2
-
-### Criar o empacotamento
-
-- Escrever o `Dockerfile`
-- Criar o `.dockerignore`
-- Construir a imagem com nome e versão
-- Verificar se o build termina sem erros
-- Inspecionar o tamanho e as camadas da imagem
-
-```bash
-docker build -t aplicacao-aula:1.0 .
-docker image ls aplicacao-aula
-```
-
----
-
-## Slide 31: Prática — Etapa 3
-
-### Executar e validar
-
-- Iniciar o container
-- Mapear a porta corretamente
-- Testar a aplicação pelo navegador ou cliente HTTP
-- Consultar os logs
-- Parar e remover o container
-- Criar uma nova instância usando a mesma imagem
-
-### Evidência esperada
-
-Aplicação acessível e logs exibidos no fluxo padrão do container.
-
----
-
-## Slide 32: Prática — Diagnóstico de Falhas
-
-### Se o container não funcionar
-
-- O processo principal encerrou?
-- A porta interna está correta?
-- A aplicação escuta em `0.0.0.0` ou apenas em `localhost`?
-- Alguma variável de ambiente está ausente?
-- A dependência foi copiada ou instalada?
-- O log apresenta erro de permissão?
-- A arquitetura da imagem é compatível com o host?
-
-> O log é evidência para diagnóstico, não apenas uma mensagem de erro.
-
----
-
-## Slide 33: De Um Container para Muitos
-
-### Novos problemas operacionais
-
-- Em qual máquina cada container deve executar?
-- Como manter a quantidade desejada de réplicas?
-- Como substituir uma instância que falhou?
-- Como atualizar sem interromper todo o serviço?
-- Como descobrir o endereço de instâncias dinâmicas?
-- Como distribuir configuração e segredos?
-- Como controlar recursos e permissões?
-
-Esses problemas motivam o uso de um **orquestrador**.
-
----
-
-## Slide 34: O que é Orquestração?
-
-### Automação do ciclo de vida de aplicações containerizadas
-
-Um orquestrador coordena:
-
-- Agendamento de workloads em máquinas disponíveis
-- Estado desejado e reconciliação
-- Reinício e substituição de instâncias
-- Escala de réplicas
-- Atualizações graduais
-- Rede e descoberta de serviços
-- Configuração, segredos e armazenamento
-
----
-
-## Slide 35: Kubernetes — Visão Geral
-
-### Plataforma para gerenciar workloads containerizados
-
-- O usuário declara o **estado desejado**
-- Controladores observam o estado atual
-- O cluster executa ações para reduzir a diferença
-
-```text
-Estado desejado → Controladores → Estado atual
-       ↑                              │
-       └──────── reconciliação ───────┘
-```
-
-Kubernetes gerencia workloads por meio de objetos de sua API.
-
----
-
-## Slide 36: Arquitetura do Cluster
-
-### Componentes em alto nível
-
-- **Control plane:** mantém o estado e coordena o cluster
-  - API server
-  - Scheduler
-  - Controllers
-  - Armazenamento do estado do cluster
-- **Nodes:** executam os workloads
-  - Kubelet
-  - Runtime de containers
-  - Componentes de rede
-
-Aplicações são distribuídas pelos nodes conforme recursos e políticas.
-
----
-
-## Slide 37: Objetos Declarativos
-
-### Descrever o resultado esperado
-
-```yaml
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: agenda-api
-spec:
-  replicas: 3
-```
-
-Campos comuns:
-
-- `apiVersion`: versão da API
-- `kind`: tipo de objeto
-- `metadata`: identificação e rótulos
-- `spec`: estado desejado
-- `status`: estado observado pelo cluster
-
----
-
-## Slide 38: Pod
-
-### Menor unidade implantável no Kubernetes
-
-- Contém um ou mais containers fortemente relacionados
-- Containers do Pod compartilham rede e podem compartilhar volumes
-- Normalmente, um Pod executa o container principal da aplicação
-- Pods são recursos efêmeros e podem ser substituídos
-- Não se deve depender do nome ou IP permanente de um Pod
-
-```text
-Pod
-├── Container da aplicação
-└── Container auxiliar (opcional)
-```
-
----
-
-## Slide 39: Deployment
-
-### Gerenciamento de aplicações stateless
-
-Um Deployment:
-
-- Declara a quantidade desejada de Pods
-- Cria e gerencia ReplicaSets
-- Substitui Pods indisponíveis
-- Permite atualização gradual da imagem
-- Mantém histórico para rollback
-
-```text
-Deployment → ReplicaSet → Pod 1
-                        → Pod 2
-                        → Pod 3
-```
-
----
-
-## Slide 40: Service
-
-### Endpoint estável para um conjunto de Pods
-
-- Pods podem ser criados e removidos dinamicamente
-- O Service seleciona Pods por rótulos
-- Oferece endereço e nome estáveis
-- Distribui conexões entre endpoints disponíveis
-- Pode expor a aplicação apenas no cluster ou externamente
-
-```text
-Cliente → Service → Pod A
-                  → Pod B
-                  → Pod C
-```
-
----
-
-## Slide 41: Pods, Deployments e Services
-
-| Objeto | Responsabilidade | Pergunta que responde |
-|---|---|---|
-| **Pod** | Executar containers relacionados | Onde o processo está rodando? |
-| **Deployment** | Manter e atualizar réplicas | Quantas instâncias devem existir? |
-| **Service** | Fornecer acesso estável | Como outros componentes encontram a aplicação? |
-
-### Fluxo
-
-`Deployment` mantém os `Pods`; o `Service` fornece acesso ao conjunto saudável.
-
----
-
-## Slide 42: Exemplo de Deployment
-
-```yaml
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: agenda-api
-spec:
-  replicas: 3
-  selector:
-    matchLabels:
-      app: agenda-api
-  template:
-    metadata:
-      labels:
-        app: agenda-api
-    spec:
-      containers:
-        - name: api
-          image: registry.example.com/agenda-api:1.0
-          ports:
-            - containerPort: 3000
-```
-
----
-
-## Slide 43: Exemplo de Service
-
-```yaml
-apiVersion: v1
-kind: Service
-metadata:
-  name: agenda-api
-spec:
-  selector:
-    app: agenda-api
-  ports:
-    - port: 80
-      targetPort: 3000
-  type: ClusterIP
-```
-
-- O seletor conecta o Service aos Pods com o rótulo correspondente
-- `ClusterIP` oferece acesso interno ao cluster
-
----
-
-## Slide 44: Estado Desejado e Autorrecuperação
-
-### Exemplo: três réplicas declaradas
-
-1. Deployment mantém três Pods
-2. Um Pod falha ou seu node fica indisponível
-3. O controlador detecta diferença no estado
-4. Um novo Pod é criado
-5. O Service passa a encaminhar tráfego aos endpoints disponíveis
-
-**Atenção:** recriar processos não substitui persistência, backup ou tratamento correto de falhas na aplicação.
-
----
-
-## Slide 45: Atualizações e Rollback
-
-### Evoluir sem substituir tudo ao mesmo tempo
-
-- Deployment pode realizar **rolling update**
-- Novos Pods entram gradualmente
-- Pods antigos são removidos de forma controlada
-- Readiness probes evitam tráfego antes de a aplicação estar pronta
-- Histórico do Deployment apoia rollback
-
-### Requisito
-
-A nova versão deve manter contratos e compatibilidade durante a transição.
-
----
-
-## Slide 46: Health Checks
-
-### Processos ativos nem sempre estão saudáveis
-
-- **Liveness probe:** indica se o container deve ser reiniciado
-- **Readiness probe:** indica se pode receber tráfego
-- **Startup probe:** protege aplicações com inicialização lenta
-
-### Exemplo de endpoints
-
-- `/health/live`
-- `/health/ready`
-
-Checks mal configurados podem provocar reinícios ou indisponibilidade desnecessários.
-
----
-
-## Slide 47: Recursos e Limites
-
-### Evitar disputa descontrolada no cluster
-
-- **Requests:** recursos usados pelo agendador como referência
-- **Limits:** teto de consumo definido para o container
-- CPU insuficiente pode causar lentidão
-- Excesso de memória pode levar ao encerramento do processo
-- Valores devem ser ajustados com métricas e testes
-
-```text
-Container sem limites ≠ recursos infinitos
-```
-
----
-
-## Slide 48: Requisitos para Produção
-
-### Containerizar é apenas o início
-
-- Imagens versionadas, assinadas e verificadas
-- Registro privado e controle de acesso
-- Configuração e segredos protegidos
-- Requests, limits e probes
-- Logs, métricas e rastreamento
-- Persistência, backup e recuperação
-- Políticas de rede e menor privilégio
-- Estratégia de rollout e rollback
-- Alta disponibilidade do cluster e da aplicação
-
----
-
-## Slide 49: Anti-padrões Comuns
-
-- Usar `latest` como única referência em produção
-- Executar aplicação como `root` sem necessidade
-- Incluir chaves e senhas na imagem
-- Tratar container como servidor permanente
-- Gravar dados importantes apenas no sistema de arquivos local
-- Criar Pods diretamente para aplicações que precisam permanecer ativas
-- Confundir reinício automático com resiliência completa
-- Adotar Kubernetes sem necessidade ou capacidade operacional
-
----
-
-## Slide 50: Discussão — Arquitetura do T2 em Produção
-
-### Revisite a proposta do grupo
-
-Para dois serviços do T2, definam:
-
-- Uma imagem por serviço e sua estratégia de versionamento
-- Configurações e segredos necessários
-- Portas e comunicação interna
-- Quantidade inicial de réplicas
-- Necessidade de volume persistente
-- Health checks
-- Recursos e limites iniciais
-- Forma de exposição pelo Service
+## Slide 13: Etapa 1 — Cenário e Requisitos
+
+### Tornar o problema explícito
+
+Definam:
+
+- Usuários e objetivos principais
+- Funcionalidades essenciais
+- Volume e variação de acesso
+- Dados críticos
+- Integrações externas
+- Requisitos de disponibilidade, desempenho e segurança
+- Restrições técnicas ou de custo
 
 **Tempo sugerido:** 15 minutos.
 
 ---
 
-## Slide 51: Checklist da Prática
+## Slide 14: Etapa 2 — Limites dos Serviços
 
-Antes de concluir, verifique:
+### Decompor por capacidade de negócio
 
-- A imagem foi construída de forma reproduzível?
-- O `.dockerignore` exclui arquivos desnecessários e sensíveis?
-- A aplicação inicia com um comando definido?
-- A porta foi mapeada corretamente?
-- Configurações estão fora da imagem?
-- Logs podem ser consultados externamente?
-- O container pode ser removido e recriado?
-- Os requisitos de produção foram registrados?
+Para cada serviço, registrem:
 
----
+- Nome
+- Responsabilidade principal
+- Regras que controla
+- Dados sob sua responsabilidade
+- Operações oferecidas
+- Dependências
+- Razão para existir como serviço independente
 
-## Slide 52: Encerramento
-
-### O que consolidamos hoje
-
-- Containers empacotam aplicações e dependências com execução isolada
-- Imagens são modelos versionados; containers são suas instâncias
-- Dockerfile torna o build reproduzível
-- Registros distribuem imagens entre ambientes
-- Volumes, configuração, segurança e observabilidade precisam ser planejados
-- Kubernetes reconcilia o estado atual com o estado desejado
-- Pods executam containers, Deployments mantêm réplicas e Services fornecem acesso estável
+**Evitem:** criar um serviço para cada tabela ou entidade.
 
 ---
 
-## Slide 53: Próxima Aula
+## Slide 15: Etapa 3 — Comunicação
 
-### Aula 05 — Serviços de Nuvem
+### APIs, mensagens e eventos
 
-- Armazenamento de objetos
-  - Amazon S3
-  - Azure Blob Storage
-  - Google Cloud Storage
-- Bancos SQL e NoSQL gerenciados
-- Serviços de computação em máquinas virtuais
-- Arquitetura de referência: aplicação web + banco + storage
-- **Trabalho 3 (T3):** lançamento e entrega em sala
+Para cada interação, indiquem:
+
+- Origem e destino
+- Informação transmitida
+- Comunicação síncrona ou assíncrona
+- Necessidade de resposta imediata
+- Comportamento em caso de indisponibilidade
+- Possibilidade de duplicação ou repetição
+
+**Pergunta-chave:** esta dependência precisa bloquear o fluxo principal?
 
 ---
 
-## Slide 54: Glossário Rápido
+## Slide 16: Etapa 4 — Estratégia de Dados
+
+### Responsabilidade e consistência
+
+- Qual serviço controla cada conjunto de dados?
+- Algum banco está sendo compartilhado sem justificativa?
+- Como outro serviço consulta uma informação necessária?
+- Quais atualizações exigem consistência imediata?
+- Onde a consistência eventual é aceitável?
+- Como falhas e repetições evitam registros duplicados?
+
+O diagrama deve tornar bancos e fluxos de dados visíveis.
+
+---
+
+## Slide 17: Etapa 5 — Escalabilidade e Resiliência
+
+### Preparar a arquitetura para variações e falhas
+
+Definam:
+
+- Componentes que precisam escalar horizontalmente
+- Serviços que devem permanecer stateless
+- Uso de balanceamento de carga
+- Pontos de cache
+- Timeouts e novas tentativas com backoff
+- Isolamento de falhas
+- Comportamento degradado quando uma dependência falha
+
+---
+
+## Slide 18: Etapa 6 — Estratégia de Deploy
+
+### Planejamento conceitual para containers
+
+Sem implementar, indiquem:
+
+- Quais componentes serão empacotados separadamente
+- Uma imagem prevista para cada serviço implantável
+- Configurações que variam por ambiente
+- Portas e dependências externas
+- Necessidade de persistência
+- Serviços que precisam de múltiplas réplicas
+- Estratégia inicial de atualização e reversão
+
+Os conceitos técnicos de Docker e Kubernetes serão aprofundados na Aula 05.
+
+---
+
+## Slide 19: Etapa 7 — Construção do Diagrama
+
+### O diagrama deve comunicar a arquitetura
+
+Incluam:
+
+- Usuários ou sistemas externos
+- Ponto de entrada
+- Serviços e responsabilidades
+- Bancos, cache e armazenamento
+- APIs, filas ou eventos
+- Integrações externas
+- Limites de confiança ou rede, quando relevantes
+
+**Regra:** toda seta deve representar uma comunicação compreensível.
+
+---
+
+## Slide 20: Revisão Cruzada entre Grupos
+
+### Um grupo revisa a proposta de outro
+
+Verifiquem:
+
+- O cenário pode ser compreendido sem explicação oral?
+- Os limites dos serviços são coerentes?
+- Dados e comunicações estão visíveis?
+- A estratégia de escala responde ao problema?
+- Há tratamento para falhas críticas?
+- O uso previsto de containers faz sentido?
+- As justificativas apresentam trade-offs?
+
+**Tempo sugerido:** 10 minutos.
+
+---
+
+## Slide 21: Checkpoint com o Professor
+
+### Cada grupo deve apresentar
+
+- Estado atual do diagrama
+- Duas decisões arquiteturais já justificadas
+- Maior dúvida em aberto
+- Principal risco identificado
+- Próximo passo para concluir o trabalho
+
+### Objetivo
+
+Receber orientação antes de consolidar uma decisão frágil ou incoerente.
+
+---
+
+## Slide 22: T2 — Checklist de Qualidade
+
+Antes de encerrar a aula, verifiquem:
+
+- Cada serviço possui responsabilidade clara?
+- A arquitetura evita banco compartilhado sem justificativa?
+- Componentes críticos podem escalar horizontalmente?
+- Falhas parciais foram consideradas?
+- APIs, filas e integrações estão identificadas?
+- A estratégia de deploy é compatível com os componentes?
+- O diagrama está legível?
+- As decisões possuem justificativas técnicas e de negócio?
+
+---
+
+## Slide 23: Resultado Esperado da Aula
+
+### Ao final da oficina, cada grupo deve possuir
+
+- Cenário e requisitos revisados
+- Diagrama em versão avançada
+- Serviços e responsabilidades descritos
+- Comunicação e estratégia de dados definidas
+- Escalabilidade e falhas discutidas
+- Estratégia conceitual de deploy registrada
+- Pendências e dúvidas identificadas
+- Plano para finalizar o T2
+
+---
+
+## Slide 24: Glossário Rápido
 
 | Termo | Significado |
 |---|---|
-| **Container** | Processo isolado criado a partir de uma imagem |
-| **Dockerfile** | Arquivo declarativo usado para construir uma imagem |
-| **Image** | Pacote imutável com aplicação e dependências |
-| **Registry** | Serviço para armazenar e distribuir imagens |
-| **Pod** | Menor unidade implantável do Kubernetes |
-| **Deployment** | Objeto que gerencia réplicas e atualizações de Pods |
-| **Service** | Endpoint estável para acessar um conjunto de Pods |
-| **Desired state** | Estado que os controladores tentam manter |
-| **Probe** | Verificação de inicialização, prontidão ou atividade |
+| **API** | Interface usada para comunicação entre sistemas |
+| **Backoff** | Aumento gradual do intervalo entre novas tentativas |
+| **C4** | Modelo de diagramas de contexto, containers, componentes e código |
+| **Coesão** | Grau de relação entre responsabilidades de um componente |
+| **Container** | Unidade prevista para empacotar uma aplicação e suas dependências |
+| **Idempotência** | Propriedade de repetir uma operação sem duplicar seu efeito |
+| **Stateless** | Componente que não depende de estado persistente local |
+| **Trade-off** | Escolha que oferece benefícios em troca de custos ou limitações |
 
 ---
 
-## Slide 55: Recursos e Referências
+## Slide 25: Recursos e Referências
 
 ### Bibliografia da disciplina
 
@@ -927,22 +384,39 @@ Antes de concluir, verifique:
 - SOUSA NETO, Manoel Veras de. *Computação em Nuvem*. Brasport, 2015.
 - MUNIZ, Antonio; IRIGOYEN, Analia. *Jornada DevOps*. Brasport, 2020.
 
-### Documentação e leituras complementares
+### Leituras complementares
 
-- Docker Docs — conceitos, construção e execução de containers
-- Kubernetes Documentation — Pods, Deployments e Services
-- Kubernetes Documentation — configuração e boas práticas
-- OCI — especificações abertas para imagens e runtimes de containers
-- BURNS, Brendan et al. *Kubernetes: Up and Running*. O'Reilly Media.
+- NEWMAN, Sam. *Building Microservices*. 2. ed. O'Reilly Media, 2021.
+- RICHARDSON, Chris. *Microservices Patterns*. Manning, 2018.
+- FOWLER, Martin; LEWIS, James. *Microservices: a definition of this new architectural term*. 2014.
+- C4 Model — documentação para visualização de arquitetura de software
 
 ---
 
-## Slide 56: Perguntas?
+## Slide 26: Encerramento e Próxima Aula
 
-### Dúvidas, comentários e feedback da aula
+### O que realizamos hoje
 
-- Qual problema os containers resolvem melhor?
-- Quando uma máquina virtual ainda é a escolha adequada?
-- Por que não devemos depender do IP de um Pod?
-- Qual é a relação entre Deployment e Service?
-- Quais requisitos faltariam para levar a prática de hoje à produção?
+- Concluímos a socialização pendente da Aula 03
+- Comparamos diferentes decisões arquiteturais
+- Desenvolvemos o T2 com orientação e revisão entre grupos
+- Registramos riscos, trade-offs e pendências
+
+### Aula 05 — Containers e Orquestração
+
+- Conceitos de containers, imagens e registros
+- Docker aplicado a uma aplicação simples
+- Visão geral do Kubernetes
+- Pods, Deployments e Services
+- Requisitos para produção
+
+---
+
+## Slide 27: Perguntas?
+
+### Dúvidas, comentários e próximos passos
+
+- Qual decisão do T2 ainda precisa de validação?
+- O diagrama comunica a proposta sem explicação adicional?
+- Qual falha representa maior risco para a arquitetura?
+- O grupo possui um plano claro para concluir o trabalho?
