@@ -704,126 +704,92 @@ Disciplina: Metodologias Ágeis
 
 ## Slide 51 — Simulado: questões 1–4
 
-1. Um plano ágil deve ser:
-   - A) Abandonado quando surgir qualquer mudança
-   - B) Seguido sem revisão até o final
-   - C) Atualizado quando evidências relevantes surgirem
-   - D) Substituído por decisões sem registro
-2. Qual conjunto representa os pilares do Scrum?
-   - A) Transparência, inspeção e adaptação
-   - B) Prazo, escopo e custo
-   - C) Pessoas, produto e processo
-   - D) Planejamento, execução e controle
-3. Quem responde pela gestão eficaz do Product Backlog?
+1. Uma coluna atingiu o limite de WIP. A equipe deve primeiro:
+   - A) Aumentar o limite sem discussão
+   - B) Excluir cartões bloqueados
+   - C) Concluir ou desbloquear trabalho existente
+   - D) Puxar mais itens
+2. Quem responde pela gestão eficaz do Product Backlog?
    - A) Developers
    - B) Product Owner
    - C) Scrum Master
    - D) Stakeholders
-4. Qual compromisso está associado ao Sprint Backlog?
-   - A) Product Goal
-   - B) Definition of Done
-   - C) Sprint Goal
-   - D) Critérios de aceitação
+3. Uma história de usuário deve comunicar principalmente:
+   - A) Necessidade e valor para um usuário
+   - B) Toda a arquitetura técnica
+   - C) Um contrato imutável
+   - D) Apenas horas de desenvolvimento
+4. Um plano ágil deve ser:
+   - A) Abandonado quando surgir qualquer mudança
+   - B) Seguido sem revisão até o final
+   - C) Atualizado quando evidências relevantes surgirem
+   - D) Substituído por decisões sem registro
 
 ---
 
 ## Slide 52 — Simulado: questões 5–8
 
-5. Qual evento inspeciona o resultado com stakeholders e pode adaptar o Product Backlog?
-   - A) Daily Scrum
-   - B) Sprint Review
-   - C) Sprint Retrospective
-   - D) Sprint Planning
-6. Uma história de usuário deve comunicar principalmente:
-   - A) Necessidade e valor para um usuário
-   - B) Toda a arquitetura técnica
-   - C) Um contrato imutável
-   - D) Apenas horas de desenvolvimento
-7. No refinamento, é coerente:
-   - A) Detalhar igualmente todo o backlog
-   - B) Evitar dividir itens grandes
-   - C) Esconder dependências
-   - D) Detalhar mais os itens próximos e relevantes
-8. A Definition of Done define:
+5. O Método Kanban recomenda inicialmente:
+   - A) Eliminar todos os papéis existentes
+   - B) Começar com o processo atual e evoluir
+   - C) Iniciar todos os itens disponíveis
+   - D) Ocultar bloqueios
+6. Qual compromisso está associado ao Sprint Backlog?
+   - A) Product Goal
+   - B) Definition of Done
+   - C) Sprint Goal
+   - D) Critérios de aceitação
+7. A Definition of Done define:
    - A) O preço do produto
    - B) A qualidade exigida do Increment
    - C) Quem pode entrar na equipe
    - D) A ordem do Product Backlog
+8. Qual conjunto representa os pilares do Scrum?
+   - A) Transparência, inspeção e adaptação
+   - B) Prazo, escopo e custo
+   - C) Pessoas, produto e processo
+   - D) Planejamento, execução e controle
 
 ---
 
 ## Slide 53 — Simulado: questões 9–12
 
-9. O Método Kanban recomenda inicialmente:
-   - A) Eliminar todos os papéis existentes
-   - B) Começar com o processo atual e evoluir
-   - C) Iniciar todos os itens disponíveis
-   - D) Ocultar bloqueios
-10. Em um sistema puxado, novo trabalho começa quando:
-   - A) Existe capacidade segundo as políticas
-   - B) Um gerente deseja manter todos ocupados
-   - C) Qualquer demanda é marcada como urgente
-   - D) O limite de WIP é ignorado
-11. Uma coluna atingiu o limite de WIP. A equipe deve primeiro:
-   - A) Aumentar o limite sem discussão
-   - B) Excluir cartões bloqueados
-   - C) Concluir ou desbloquear trabalho existente
-   - D) Puxar mais itens
-12. Uma política explícita deve ser:
+9. Uma política explícita deve ser:
    - A) Secreta e conhecida apenas pelo gestor
    - B) Fixa e impossível de revisar
    - C) Aplicada somente em auditorias
    - D) Visível, compreendida e revisável
+10. Qual evento inspeciona o resultado com stakeholders e pode adaptar o Product Backlog?
+   - A) Daily Scrum
+   - B) Sprint Review
+   - C) Sprint Retrospective
+   - D) Sprint Planning
+11. No refinamento, é coerente:
+   - A) Detalhar igualmente todo o backlog
+   - B) Evitar dividir itens grandes
+   - C) Esconder dependências
+   - D) Detalhar mais os itens próximos e relevantes
+12. Em um sistema puxado, novo trabalho começa quando:
+   - A) Existe capacidade segundo as políticas
+   - B) Um gerente deseja manter todos ocupados
+   - C) Qualquer demanda é marcada como urgente
+   - D) O limite de WIP é ignorado
 
 ---
 
 ## Slide 54 — Gabarito do simulado
 
-| Questão | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| Resposta | C | A | B | C | B | A | D | B | B | A | C | D |
-
-- Explique cada resposta usando o conceito, não apenas a letra
-- Para cada alternativa incorreta, identifique a distorção principal
-
 ---
 
 ## Slide 55 — Correção comentada: questões 1–4
-
-1. O plano é adaptado quando novas evidências melhoram a decisão
-2. Transparência, inspeção e adaptação sustentam o empirismo
-3. Product Owner responde pela gestão eficaz do Product Backlog
-4. Sprint Goal é o compromisso associado ao Sprint Backlog
-
-- Estratégia:
-  - Localize o substantivo central da pergunta
-  - Recupere sua definição e suas associações oficiais
 
 ---
 
 ## Slide 56 — Correção comentada: questões 5–8
 
-5. Sprint Review inspeciona resultado e contexto com stakeholders
-6. História de usuário comunica necessidade e valor
-7. Refinamento progressivo detalha mais o trabalho próximo
-8. DoD estabelece o estado de qualidade exigido para o Increment
-
-- Atenção:
-  - Review não é Retrospective
-  - Critérios de aceitação não são a mesma coisa que DoD
-
 ---
 
 ## Slide 57 — Correção comentada: questões 9–12
-
-9. Kanban começa com o processo atual e promove evolução
-10. Trabalho é puxado quando existe capacidade
-11. Ao atingir o limite, a prioridade é concluir ou desbloquear
-12. Políticas precisam ser visíveis, compreendidas e revisáveis
-
-- Atenção:
-  - Kanban não busca manter todos individualmente ocupados
-  - O foco está no fluxo e na entrega de valor
 
 ---
 
@@ -942,4 +908,3 @@ Disciplina: Metodologias Ágeis
 - Que associação precisa ser memorizada com compreensão?
 - Em qual caso prático ainda há dúvida?
 - Que alternativa do simulado exigiu mais análise?
-
