@@ -10,6 +10,7 @@ Disciplina: Metodologias Ágeis
 - Metodologias Ágeis
 - Aula 09: adaptação de metodologias ágeis para projetos web
 - Primeira aula do segundo bimestre
+- Conteúdo aplicado na data originalmente prevista para a Aula 11
 - Professor Ranghetti
 
 ---
@@ -43,30 +44,33 @@ Disciplina: Metodologias Ágeis
 
 ## Slide 4 — Ajuste do calendário
 
-- Na próxima semana ocorrerá a Jornada Acadêmica
-- Não haverá aula regular da disciplina nessa semana
+- A Aula 09 não foi realizada devido às chuvas e às condições climáticas adversas
+- Na semana seguinte ocorreu a Jornada Acadêmica, sem aula regular da disciplina
+- Na data originalmente prevista para a Aula 10 houve continuidade da Jornada Acadêmica
+  - A alteração também ocorreu em razão do mau tempo e das chuvas
+- Hoje, na data originalmente prevista para a Aula 11:
+  - Será aplicado o conteúdo planejado para a Aula 09
+  - Iniciaremos efetivamente o conteúdo do segundo bimestre
 - Consequência:
-  - O segundo bimestre terá seis aulas regulares em vez de sete
-- Estratégia:
-  - Preservar os conteúdos do plano de ensino
-  - Integrar temas relacionados em uma mesma aula
-  - Manter atividades práticas e trabalhos previstos
-  - Evitar transformar o cronograma em uma sequência apenas expositiva
+  - O cronograma restante precisará integrar conteúdos relacionados
+  - As atividades práticas e os trabalhos serão mantidos com datas ajustadas
 
 ---
 
 ## Slide 5 — Cronograma ajustado do segundo bimestre
 
-| Aula | Conteúdo principal |
+| Data prevista | Situação ou conteúdo principal |
 |---:|---|
-| 09 | Adaptação para projetos web e introdução às práticas de XP |
-| 10 | XP, customização e combinação responsável de práticas |
-| 11 | Comunicação, colaboração, auto-organização e liderança distribuída |
-| 12 | Ferramentas para gestão de projetos ágeis |
-| 13 | Estimativas ágeis e planejamento adaptativo |
-| 14 | Revisão bimestral e fechamento do mini-projeto integrador |
+| 09 | Aula não realizada devido às chuvas e ao mau tempo |
+| Jornada Acadêmica | Sem aula regular da disciplina |
+| 10 | Continuidade da Jornada Acadêmica devido ao mau tempo e às chuvas |
+| **11 — hoje** | **Conteúdo da Aula 09: adaptação para projetos web e introdução às práticas de XP** |
+| 12 | XP, customização, comunicação e colaboração |
+| 13 | Ferramentas, estimativas ágeis e planejamento adaptativo |
+| 14 | Revisão e fechamento do mini-projeto integrador |
 
-- A Jornada Acadêmica acontece entre as Aulas 09 e 10
+- Os números das aulas indicam as datas originalmente previstas no calendário
+- O conteúdo de hoje continua identificado como Aula 09 para preservar a sequência didática
 
 ---
 
@@ -74,9 +78,9 @@ Disciplina: Metodologias Ágeis
 
 | Trabalho | Tema | Previsão de entrega |
 |---|---|---|
-| B2-T1 | Escolha e adaptação da abordagem para um cenário web | Aula 10 |
-| B2-T2 | Plano de colaboração, comunicação e organização do time | Aula 12 |
-| B2-T3 | Configuração de ferramenta e padronização do fluxo | Aula 13 |
+| B2-T1 | Escolha e adaptação da abordagem para um cenário web | Aula 12 |
+| B2-T2 | Plano de colaboração, comunicação e organização do time | Aula 13 |
+| B2-T3 | Configuração de ferramenta e padronização do fluxo | Aula 14 |
 | B2-T4 | Mini-projeto integrador: processo, backlog e planejamento | Aula 14 |
 
 - Cada trabalho vale até 1,0 ponto
@@ -109,7 +113,7 @@ Disciplina: Metodologias Ágeis
 - Nesta aula:
   - Visão geral de XP e suas práticas principais
   - Uso de XP como fonte de práticas técnicas e colaborativas
-- Na Aula 10:
+- Na Aula 12:
   - Aprofundamento em TDD, integração contínua, programação em pares e refatoração
   - Combinação responsável com Scrum e Kanban
 
@@ -348,7 +352,7 @@ Disciplina: Metodologias Ágeis
   - Propriedade coletiva do código
   - Padrões de codificação
   - Design simples
-- O aprofundamento ocorrerá na Aula 10
+- O aprofundamento ocorrerá na Aula 12
 
 ---
 
@@ -699,7 +703,7 @@ Disciplina: Metodologias Ágeis
 - Equipes:
   - Conforme organização definida pelo professor
 - Entrega:
-  - Aula 10, após a semana da Jornada Acadêmica
+  - Aula 12, na próxima aula regular
 - Objetivo:
   - Demonstrar capacidade de diagnosticar um contexto e justificar práticas adequadas
 
@@ -808,10 +812,8 @@ Disciplina: Metodologias Ágeis
   - Visão inicial das práticas de XP
   - Adaptação responsável e riscos de “ágil de fachada”
   - Lançamento do B2-T1
-- Próxima semana:
-  - Jornada Acadêmica — sem aula regular da disciplina
-- Aula 10:
-  - XP, customização e combinação responsável de práticas
+- Próxima aula regular — Aula 12 no calendário:
+  - XP, customização, comunicação e colaboração
   - Entrega e feedback do B2-T1
 
 ---
